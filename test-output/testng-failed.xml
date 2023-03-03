@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="Chrome"/>
+  <test thread-count="5" name="C:/Users/EKTA/IdeaProjects/SeleniumJava(failed)">
+    <classes>
+      <class name="com.bridgelabz.test.LinkedInFrameHandling">
+        <methods>
+          <include name="SignUpPage"/>
+          <include name="TearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.bridgelabz.test.LinkedInFrameHandling -->
+    </classes>
+  </test> <!-- C:/Users/EKTA/IdeaProjects/SeleniumJava(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

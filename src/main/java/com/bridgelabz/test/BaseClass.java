@@ -4,27 +4,33 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
-    public static ChromeDriver driver = null;
+    public static WebDriver driver = null;
     @BeforeTest
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-
+    @Parameters("browser")
+    public void setUp(@Optional("Firefox") String Browser){
+        if (Browser.equalsIgnoreCase("Chrome")){
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else if (Browser.equalsIgnoreCase("Firefox")){
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }else {
+            System.out.println("Not Selected any Browser!!!");
+        }
         driver.manage().window().maximize();
-//      driver.get("https://bldev.bridgelabz.com/webinar");
-//        driver.get("https://www.amazon.in/");
-//      driver.get("https://demoqa.com/browser-windows");
-//      driver.navigate().to("https://mvnrepository.com/artifact/org.testng/testng/7.7.0");
-//      driver.navigate().to("https://www.facebook.com/");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
     @AfterTest

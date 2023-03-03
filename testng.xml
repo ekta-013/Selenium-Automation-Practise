@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <parameter name="browser" value="Chrome"></parameter>
+    <test verbose="2" preserve-order="true" name="C:/Users/EKTA/IdeaProjects/SeleniumJava">
+        <classes><class name="com.bridgelabz.test.Amazon">
+            <methods>
+                <include name="returnOrders"/>
+            </methods>
+        </class>
+            <class name="com.bridgelabz.test.FbSelectClass">
+                <methods>
+                    <include name="NavigateOnFbLoginScreen_Success"/>
+                    <include name="RedirectOnToFbScreen_IdDisplayedImg"/>
+                    <include name="CreateScreen"/>
+                </methods>
+            </class>
+            <class name="com.bridgelabz.test.JavaScriptExecutor"><methods>
+                <include name="Execute"/>
+            </methods>
+            </class>
+            <class name="com.bridgelabz.test.LinkedInFrameHandling">
+                <methods><include name="SignUpPage"/>
+                </methods>
+            </class>
+            <class name="com.bridgelabz.test.Locators">
+                <methods><include name="demoLocators"/>
+                </methods>
+            </class>
+            <class name="com.bridgelabz.test.TestScript">
+                <methods>
+                    <include name="WebinarScreen"/>
+                </methods>
+            </class>
+            <class name="com.bridgelabz.test.WindowHandling">
+                <methods>
+                    <include name="getWindowAndHandleIt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

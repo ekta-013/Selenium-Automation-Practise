@@ -1,6 +1,5 @@
 package com.bridgelabz.test;
 
-import com.bridgelabz.test.BaseClass;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;

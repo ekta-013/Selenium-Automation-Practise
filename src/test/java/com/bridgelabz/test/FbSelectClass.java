@@ -1,6 +1,5 @@
 package com.bridgelabz.test;
 
-import com.bridgelabz.test.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -8,20 +7,19 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.List;
 
 public class FbSelectClass extends BaseClass {
 
     public Select dropDown;
 
-    @Test(priority = 3)
+    @Test(description = "Screen navigate on facebook login screen", priority = 2)
     public void NavigateOnFbLoginScreen_Success() throws IOException {
         driver.navigate().to("https://www.facebook.com/");
        String title = driver.getTitle();
         Assert.assertEquals(title,"Facebook – log in or sign up");
         takeScreenshot();
     }
-    @Test(priority = 2)
+    @Test(description = "Screen redirects to Facebook Screen",priority = 1)
     public void RedirectOnToFbScreen_IdDisplayedImg() throws IOException {
         driver.navigate().to("https://www.facebook.com/");
         boolean flag = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div/div[1]/div/img")).isDisplayed();
@@ -29,7 +27,7 @@ public class FbSelectClass extends BaseClass {
         takeScreenshot();
     }
 
-    @Test(priority = 1)
+    @Test(description = "data input into create account screen",priority = 0)
     public void CreateScreen() throws InterruptedException, IOException {
         driver.navigate().to("https://www.facebook.com/");
         driver.findElement(By.partialLinkText("Create")).click();
